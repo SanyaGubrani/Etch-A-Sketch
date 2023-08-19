@@ -32,7 +32,7 @@ h1{
 
 .grid{
     background-color: #f6dcf6;
-    transition: 0.3s ease;
+    transition: 0.2s ease;
 }
 
 .buttons{
@@ -62,6 +62,7 @@ h1{
     transition: 0.2s ease;
     opacity: 0.7;
 }
+
 
 .custom{
     width: 10rem;
