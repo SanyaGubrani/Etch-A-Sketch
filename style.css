@@ -11,13 +11,14 @@ body{
 }
 
 .container{
-    margin: 30px auto;
+    margin: 20px auto;
     width: 500px;
     height: 500px;
     display: grid;
     grid-template-columns: repeat(16,1fr);
     grid-template-rows: repeat(16,1fr);
     grid-gap: 2px;
+    box-shadow: rgba(107, 5, 108, 0.749) 0px 7px 29px 0px;
 }
 
 h1{
@@ -32,8 +33,10 @@ h1{
 
 .grid{
     background-color: #f6dcf6;
-    transition: 0.2s ease;
+    transition: 0.35s ease;
 }
+
+  
 
 .buttons{
     display: flex;
@@ -68,11 +71,35 @@ h1{
     width: 10rem;
 }
 
+/*Scrollbar*/
+.scrollbar-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+}
+
+.scrollbar-container p{
+    font-family: 'Gloria Hallelujah', 'Courier New';
+    letter-spacing: 0.09rem;
+    font-size: 1.25rem;
+    padding: 7px;
+}
 
 
+#scrollbar{
+    width: 13rem;
+    padding: 2px;
+}
 
 
-
-
+#scrollbar{
+    appearance: auto;
+    -webkit-appearance: none;
+    background-color: #fefefe;
+    border-radius: 30px;
+    height: 2px;
+}
 
 

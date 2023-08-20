@@ -4,18 +4,28 @@ const container = document.querySelector('.container');
 const buttons = document.querySelectorAll('.btn');
 const clearButton = document.querySelector('.Clear');
 const customButton = document.querySelector('.custom');
+const scrollbar = document.getElementById('scrollbar');
+const pixels = document.querySelector('.pixel');
 
 let defaultColor = 'black';
+let gridSize = 16;
 
-for(let i=0;i<16;i++){
-    for(let j=0;j<16;j++){
-        const div = document.createElement('div');
-        div.classList.add('grid');
-        container.appendChild(div);
 
-        div.addEventListener('mouseenter', function(){
-            colors(div);
-        });
+function grid(size){
+    container.innerHTML = '';
+    container.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${size}, 1fr)`;
+
+    for(let i=0; i < gridSize; i++){
+        for(let j=0; j < gridSize; j++){
+            const div = document.createElement('div');
+            div.classList.add('grid');
+            container.appendChild(div);
+
+            div.addEventListener('mouseenter', function(){
+                colors(div);
+            });
+        }
     }
 }
 
@@ -51,11 +61,12 @@ function colors(element){
             element.style.backgroundColor = 'black';
             break;
     }
-}
+}2
+
 
 buttons.forEach(function (button) {
     button.addEventListener('click', function () {
-        const color = button.classList[1];
+        const color = button.classList[1]; //btn "Black": [0] [1]
         defaultColor = color;
     })
 });
@@ -66,6 +77,15 @@ clearButton.addEventListener('click', function(){
     gridCells.forEach(function (element) {
         element.style.backgroundColor = ''; 
     });
+})
+
+grid(gridSize)
+
+//Scrollbar for grid size
+scrollbar.addEventListener('input', function(){
+    gridSize = parseInt(scrollbar.value);
+    pixels.textContent = `${gridSize} X ${gridSize}`
+    grid(gridSize)
 })
 
 
