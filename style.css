@@ -43,8 +43,8 @@ h1{
 
 .container{
     margin: 20px auto;
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     display: grid;
     grid-template-columns: repeat(16,1fr);
     grid-template-rows: repeat(16,1fr);
