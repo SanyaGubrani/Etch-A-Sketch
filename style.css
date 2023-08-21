@@ -10,15 +10,10 @@ body{
     background-color: #c38cc8;
 }
 
-.container{
-    margin: 20px auto;
-    width: 500px;
-    height: 500px;
-    display: grid;
-    grid-template-columns: repeat(16,1fr);
-    grid-template-rows: repeat(16,1fr);
-    grid-gap: 2px;
-    box-shadow: rgba(107, 5, 108, 0.749) 0px 7px 29px 0px;
+.intro{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 h1{
@@ -31,12 +26,41 @@ h1{
     text-shadow: 3px 3px 6px rgb(171, 21, 169);
 }
 
+.toggle{
+    margin-left: 18px;
+    padding: 1.6rem;
+    border-radius: 50%;
+    outline: 0;
+    border: 0;
+    box-shadow: 3px 3px 6px rgb(154, 21, 152);
+}
+
+.toggle:hover{
+    opacity: 0.7;
+    transform: scale(1.1);
+    transition: 0.3s ease;
+}
+
+.container{
+    margin: 20px auto;
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(16,1fr);
+    grid-template-rows: repeat(16,1fr);
+    grid-gap: 2px;
+    box-shadow: rgba(107, 5, 108, 0.749) 0px 7px 29px 0px;
+}
+
+.container.no-gap{
+    grid-gap: 0;
+}
+
 .grid{
     background-color: #f6dcf6;
     transition: 0.35s ease;
 }
 
-  
 
 .buttons{
     display: flex;
@@ -90,16 +114,71 @@ h1{
 
 #scrollbar{
     width: 13rem;
-    padding: 2px;
-}
-
-
-#scrollbar{
+    padding: 2.1px;
     appearance: auto;
     -webkit-appearance: none;
     background-color: #fefefe;
     border-radius: 30px;
-    height: 2px;
+    height: 2.7px;
 }
 
+@media(max-width:768px){
+    .container{
+        width: 400px;
+        height: 400px;
+    }
 
+    h1{
+        font-size: 1.7rem;
+    }
+
+    .intro{
+        margin: 5px;
+    }
+
+    .toggle{
+        padding: 1.4rem;
+    }
+
+    .btn{
+        padding: 0.4rem;
+        width: 7.5rem;
+        font-size: 1rem;
+    }
+
+    .custom{
+        width: 9rem;
+    }
+}
+
+@media(max-width:450px){
+    .container{
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media(max-width:350px){
+    .container{
+        width: 200px;
+        height: 200px;
+    }
+
+    h1{
+        font-size: 1.2rem;
+    }
+
+    .toggle{
+        padding: 1rem;
+    }
+
+    .btn{
+        padding: 0.2rem;
+        width: 7rem;
+        font-size: 0.8rem;
+    }
+
+    .custom{
+        width: 8rem;
+    }
+}
