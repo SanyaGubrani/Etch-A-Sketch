@@ -6,6 +6,7 @@ const clearButton = document.querySelector('.Clear');
 const customButton = document.querySelector('.custom');
 const scrollbar = document.getElementById('scrollbar');
 const pixels = document.querySelector('.pixel');
+const toggle = document.querySelector('.toggle');
 
 let defaultColor = 'black';
 let gridSize = 16;
@@ -48,8 +49,8 @@ function colors(element){
             element.style.backgroundColor = rgbColor;
             break;
         
-        case 'White':
-            element.style.backgroundColor = 'white';
+        case 'Eraser':
+            element.style.backgroundColor = '#f6dcf6';
             break;
 
         case 'custom': 
@@ -88,6 +89,10 @@ scrollbar.addEventListener('input', function(){
     grid(gridSize)
 })
 
+//Change grid to plain
+toggle.addEventListener('click', function(){
+    container.classList.toggle('no-gap');
+})
 
 
 
